@@ -1,7 +1,8 @@
 # Android App Uninstaller Service
 
 This project is an Android Accessibility Service designed to automatically uninstall applications sequentially based on user selection, excluding system applications. It lists all apps installed on the phone (excluding system apps) and allows users to easily uninstall multiple apps without manual intervention. This service is primarily created as a sample project for Accessibility Service and aims to serve as a reference for using the Accessibility API as well as being a useful tool.
-
+![Screenshot 1](Screenshot_20240202_232625.png)
+![Screenshot 2](Screenshot_20240202_233040.png)
 ## Features
 
 - **App Listing**: Lists all apps installed on the phone, excluding system applications.
