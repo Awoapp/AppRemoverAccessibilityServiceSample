@@ -49,6 +49,7 @@ import com.android.accesibiliyservice.databinding.LayoutMainBinding;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 // MainActivity class that manages app list and interacts with the user for app removal
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements SendAppList {
         if (itemId == R.id.fromOldToNew) {
             // Sorts apps from oldest to newest based on install date
             ArrayList<AppModel> fromOldToNewList = new ArrayList<>(appModelList);
-            Collections.sort(fromOldToNewList, (app1, app2) -> Long.compare(app1.getAppInstalDate(), app2.getAppInstalDate()));
+            Collections.sort(fromOldToNewList, Comparator.comparingLong(AppModel::getAppInstalDate));
             appListAdapter.sortArrayList(fromOldToNewList);
             currentAppModelList = fromOldToNewList;
             return true;
@@ -251,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements SendAppList {
     // Checks if the accessibility service is enabled by comparing the service ID with the enabled services.
     private boolean isAccessibilityServiceEnabled() {
         // Construct the service ID using the package name and the class name of the accessibility service.
-        String service = getPackageName() + "/." + RemoveAppService.class.getSimpleName();
+        String service = getPackageName() + "/.Services." + RemoveAppService.class.getSimpleName();
         // Log the service identifier for debugging purposes.
         Log.d("AccessibilityCheck", "Service Identifier: " + service);
         // Get the AccessibilityManager to access system accessibility services.
