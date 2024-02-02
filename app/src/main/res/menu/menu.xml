@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/fromOldToNew"
+        android:icon="@drawable/baseline_filter_list_24"
+        android:title="From New"
+        app:showAsAction="always" />
+    <item android:id="@+id/fromNewToOld"
+        android:title="From Old"
+        android:icon="@drawable/baseline_filter_list2_24"
+      app:showAsAction="always" />
+</menu>
